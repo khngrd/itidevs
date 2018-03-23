@@ -1,3 +1,22 @@
+h1,
+h2,
+h3,
+p,
+ol,
+ul {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 22px;
+}
+h2 {
+  font-size: 18px;
+}
+h3 {
+  font-size: 14px;
+}
 p {
+  font-size: 14px;
   color: red!important;
 }
