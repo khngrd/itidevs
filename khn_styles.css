@@ -1,0 +1,106 @@
+#article {
+ max-width: 830px;
+margin-bottom: 55px;
+font-family: "Segoe UI",SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+padding: 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.kb_article h1,
+#article h1 {
+ font-size: 16px;
+ color: #109000;
+margin-top: 15px;
+}
+
+.kb_article p,
+#article p {
+  color: #5e5e5e;
+font-size: 13px;
+}
+
+.kb_article img,
+#article img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.kb_article .modal-image,
+#article .modal-image {
+width: 175px;
+height: 175px;
+float: left;
+position: relative;
+//margin: 15px;
+margin: 0 15px 15px 0;
+}
+
+.kb_article ul,
+#article ul {
+padding-left: 10px;
+background-color: #f2f2f2;
+color: #000;
+padding: 15px;
+}
+
+.kb_article ol li,
+.kb_article ul li,
+#article ol li, 
+#article ul li {
+margin-bottom: 8px;
+font-family: "Segoe UI",SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.kb_article ol, 
+#article ol {
+display: block;
+}
+
+.kb_article ul li:first-child,
+#article ul li:first-child {
+list-style-type: none;
+font-size: 14px;
+color: firebrick;
+}
+
+.kb_article hr,
+#article hr {
+clear: both;
+}
+
+.kb_article .modal-image a,
+#article .modal-image a {
+    background-image: radial-gradient(circle, transparent 25%, #fff 25%, #fff 35%, transparent 35%, transparent 45%, #fff 45%);
+    border-radius: .25em;
+    display: inline-block;
+    height: 2em;
+    left: 50%;
+    margin: -1em -1.5em;
+    position: absolute;
+    top: 50%;
+    width: 3em;
+    -webkit-filter: drop-shadow(0 2px 3px hsla(0,0%,0%,.25));
+}
+
+.kb_article .modal-image a:after,
+#article .modal-image a:after {
+    border: .25em solid #fff;
+    border-bottom: none;
+    border-radius: .25em .25em 0 0;
+    content: '';
+    height: .25em;
+    left: .875em;
+    position: absolute;
+    top: -.5em;
+    width: .75em;
+}
+.kb_article .modal-image a:before,
+#article .modal-image a:before {
+    background-color: #fff;
+    content: '';
+    height: .25em;
+    left: .25em;
+    position: absolute;
+    top: -.25em;
+    width: .5em;
+}
