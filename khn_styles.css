@@ -78,8 +78,8 @@
   clear: both;
 }
 
-#article .accordion-toggle,
-.kb_article .accordion-toggle {
+#article h1.accordion-toggle,
+.kb_article h1.accordion-toggle {
   cursor: pointer;
 }
 
@@ -89,21 +89,21 @@
   padding: 10px 5px 5px 10px;
 }
 
-#article article-custom-section.default,
-.kb_article article-custom-section.default {
+#article .article-custom-section.default,
+.kb_article .article-custom-section.default {
   display: block;
   padding: 10px 5px 5px 10px;
 }
 
-#article .accordion-toggle:before,
-.kb_article .accordion-toggle:before {
+#article h1.accordion-toggle:before,
+.kb_article h1.accordion-toggle:before {
   content: '\002b';
   font-size: 15px;
   float: left;
   margin-right: 5px;
 }
 
-#article .accordion-toggle.active:before,
-.kb_article .accordion-toggle.active:before {
+#article h1.accordion-toggle.active:before,
+.kb_article h1.accordion-toggle.active:before {
   content: "\2212";
 }
