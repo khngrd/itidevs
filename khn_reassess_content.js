@@ -1,4 +1,4 @@
-setTimeout(function(){
+setTimeout(function () {
     var extWrapper = jQuery("#article, .kb_article");
     jQuery(extWrapper).wrapInner("<div id='extWrapper' style='padding-bottom:30px' />");
 
@@ -9,11 +9,11 @@ setTimeout(function(){
                 .unwrap()
                 .wrap("<a />")
                 .parent()
-                // .attr("href", jQuery(this).attr("src"))
+            // .attr("href", jQuery(this).attr("src"))
         }
     });
 
-    jQuery("a", extWrapper).each(function(index) {
+    jQuery("a", extWrapper).each(function (index) {
         jQuery(this)
             .nextUntil("a")
             .andSelf()
@@ -27,7 +27,7 @@ setTimeout(function(){
         // jQuery(this).addClass("accordion-toggle");
         jQuery(this).first().addClass("accordion-toggle default")
         jQuery(this).not(":first").addClass("accordion-toggle")
-        jQuery(this).parent().before(this); 
+        jQuery(this).parent().before(this);
     })
 
 
@@ -37,4 +37,4 @@ setTimeout(function(){
             jQuery(".article-custom-section").not(jQuery(this).next()).slideUp('fast');
         });
     });
-});
+}, 2500);
