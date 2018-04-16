@@ -41,4 +41,5 @@ setTimeout(function () {
             jQuery(".article-custom-section").not(jQuery(this).next()).slideUp('fast');
         });
     });
+    jQuery('head').append('<link rel="stylesheet" href="https://rawgit.com/khngrd/itidevs/master/khn_styles.css" type="text/css" />');
 }, 3250);
