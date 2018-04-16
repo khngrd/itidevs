@@ -103,7 +103,7 @@
   margin-right: 5px;
 }
 
-#article .accordion-toggle .active:before,
-.kb_article .accordion-toggle .active:before {
+#article .accordion-toggle.active:before,
+.kb_article .accordion-toggle.active:before {
   content: "\2212";
 }
