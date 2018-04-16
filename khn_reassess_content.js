@@ -2,7 +2,7 @@ setTimeout(function () {
     var extWrapper = jQuery("#article, .kb_article");
     jQuery(extWrapper).wrapInner("<div id='extWrapper' style='padding-bottom:30px' />");
 
-    $(extWrapper).html(function (i, html) {
+    jQuery(extWrapper).html(function (i, html) {
         return html.replace(/&nbsp;/g, '');
     });
 
