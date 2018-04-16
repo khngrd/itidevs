@@ -37,4 +37,4 @@ setTimeout(function () {
             jQuery(".article-custom-section").not(jQuery(this).next()).slideUp('fast');
         });
     });
-}, 500);
+}, 1500);
