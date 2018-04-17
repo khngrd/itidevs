@@ -108,3 +108,9 @@ body {
 #extbtnBack:before {
   content: '\f0a9';
 }
+
+#extWrapper ol {
+   padding-left: 0;
+   margin-left: 0;
+   float: left;
+}
