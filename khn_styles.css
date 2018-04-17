@@ -48,6 +48,12 @@
   margin: 0 15px 15px 0;
 }
 
+#article a.extWide,
+.kb_article a.extWide {
+  width: 450px;
+  height: auto;
+}
+
 #article ul,
 .kb_article ul {
   padding-left: 10px;
