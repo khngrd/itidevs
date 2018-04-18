@@ -87,7 +87,7 @@ body {
   float: right;
   width: 175px;
   height: 175px;
-  margin: 0 15px 15px 0;
+  margin-left: 15px;
 }
 
 #extWrapper a.expand {
