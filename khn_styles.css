@@ -1,7 +1,9 @@
-#extWrapper  {
+#extWrapper {
   color: #5e5e5e;
   padding-bottom: 30px;
   max-width: 800px;
+  font-size: 15px;
+  font-family: "Segoe UI",SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 #extWrapper h1 {
