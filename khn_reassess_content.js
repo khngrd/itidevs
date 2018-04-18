@@ -7,6 +7,8 @@
         return html.replace(/&nbsp;/g, '');
     });
 
+    jq2("p:empty").remove()
+
     jq2("img", extWrapper).each(function () {
         if (jq2(this).length) {
             jq2(this)
