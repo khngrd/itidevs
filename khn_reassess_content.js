@@ -1,3 +1,5 @@
+// $.getScript('https://rawgit.com/khngrd/itidevs/master/khn_reassess_content.js');
+
 jq2 = jQuery.noConflict();
 
 var extWrapper = jq2("#article, .kb_article");
