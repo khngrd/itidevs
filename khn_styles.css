@@ -32,6 +32,7 @@
 
 #extWrapper ol {
   display: block;
+  padding-left: 0;
 }
 
 #extWrapper ul li:first-child {
