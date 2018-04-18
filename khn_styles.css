@@ -11,7 +11,7 @@
 }
 
 #extWrapper p {
-  font-size: 13px;
+  //font-size: 13px;
 }
 
 #extWrapper a.extWide {
@@ -57,13 +57,13 @@
 
 #extWrapper .article-custom-section {
   display: none;
-  padding: 0 5px 5px 10px;
+  padding: 0 5px 5px 0;
   margin-left: 25px;
 }
 
 #extWrapper .article-custom-section.default {
   display: block;
-  padding: 0 5px 5px 10px;
+  padding: 0 5px 5px 0;
   margin-bottom: 50px;
 }
 /*
