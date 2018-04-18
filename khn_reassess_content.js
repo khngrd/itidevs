@@ -58,12 +58,3 @@
     });
 
     jq2('head').append('<link rel="stylesheet" href="https://rawgit.com/khngrd/itidevs/master/khn_styles.css" type="text/css" />');
-
-    jq2(extWrapper).append("<button input type='button' id='extBtnBack' class='btn btn-default' style='float:left;  margin-left:  5%' />");
-    jq2(extWrapper).append("<button input type='button' id='extBtnForw' class='btn btn-default' style='float:right; margin-right: 5%' />");
-
-    jq2(".fa.fa-search:first").clone().appendTo("#extBtnBack");
-    jq2(".fa.fa-search:first").clone().appendTo("#extBtnForw");
-
-    jq2("#extBtnBack i.fa.fa-search").removeClass("fa fa-search").addClass("fa fa-long-arrow-left").css("font-size", "18px");
-    jq2("#extBtnForw i.fa.fa-search").removeClass("fa fa-search").addClass("fa fa-long-arrow-right").css("font-size", "18px");
