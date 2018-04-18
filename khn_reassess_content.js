@@ -1,45 +1,58 @@
-setTimeout(function () {
-    var extWrapper = jQuery("#article, .kb_article");
-    jQuery(extWrapper).wrapInner("<div id='extWrapper' style='padding-bottom:30px' />");
+    jq2 = jQuery.noConflict();
 
-    jQuery(extWrapper).html(function (i, html) {
+    var extWrapper = jq2("#article, .kb_article");
+    jq2(extWrapper).wrapInner("<div id='extWrapper' style='padding-bottom:30px' />");
+
+    jq2(extWrapper).html(function (i, html) {
         return html.replace(/&nbsp;/g, '');
     });
 
-    jQuery("img", extWrapper).each(function () {
-        if (jQuery(this).length) {
-            jQuery(this)
-                .attr("href", jQuery(this).attr("src"))
-                .unwrap()
+    jq2("img", extWrapper).each(function () {
+        if (jq2(this).length) {
+            jq2(this)
+                .attr("href", jq2(this).attr("src"))
                 .wrap("<a />")
                 .parent()
-            // .attr("href", jQuery(this).attr("src"))
+                .unwrap()
+                // .attr("href", jq2(this).attr("src"))
         }
     });
 
-    jQuery("a", extWrapper).each(function (index) {
-        jQuery(this)
+    jq2("a", extWrapper).each(function (index) {
+        jq2(this)
             .nextUntil("a")
             .andSelf()
             .wrapAll("<div class='article-custom-section' />")
     });
 
-    jQuery(".article-custom-section:first").addClass("default").css("display", "block");
+    jq2(".article-custom-section:first").addClass("default").css("display", "block");
 
 
-    jQuery("h1", extWrapper).each(function () {
-        // jQuery(this).addClass("accordion-toggle");
-        jQuery(this).first().addClass("accordion-toggle default")
-        jQuery(this).not(":first").addClass("accordion-toggle")
-        jQuery(this).parent().before(this);
+    jq2("h1", extWrapper).each(function () {
+        jq2(this).addClass("accordion-toggle")
+        jq2(this).parent().before(this);
     })
 
 
-    jQuery(document).ready(function (jQuery) {
-        jQuery('#extWrapper').find('.accordion-toggle').click(function () {
-            jQuery(this).next().slideToggle('fast');
-            jQuery(".article-custom-section").not(jQuery(this).next()).slideUp('fast');
-        });
+    jq2("h1", extWrapper).first().addClass("active");
+
+
+    jq2('#extWrapper').find('.accordion-toggle').click(function () {
+        jq2(this).next().slideToggle('fast');
+        jq2(".article-custom-section").not(jq2(this).next()).slideUp('fast');
     });
-    jQuery('head').append('<link rel="stylesheet" href="https://rawgit.com/khngrd/itidevs/master/khn_styles.css" type="text/css" />');
-}, 750);
+
+    jq2("h1", extWrapper).click(function () {
+        jq2("h1", extWrapper).removeClass("active");
+        jq2(this).addClass("active");
+    });
+
+    jq2("img", extWrapper).click(function () {
+        if (jq2("a.expand")[0]) {
+            jq2(this).parent().removeClass("expand");
+        } else {
+            jq2(this).parent().addClass("expand");
+        }
+    });
+
+    jq2('head').append('<link rel="stylesheet" href="https://rawgit.com/khngrd/itidevs/master/khn_styles.css" type="text/css" />');
