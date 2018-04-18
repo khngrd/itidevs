@@ -16,7 +16,7 @@
   padding: 15px;
 }
 
-#extWrapper ol li {
+#extWrapper ol li,
 #extWrapper ul li {
   margin-bottom: 8px;
 }
