@@ -71,8 +71,7 @@
   opacity: 1;
 }
 
-#article .article-custom-section,
-.kb_article .article-custom-section {
+#extWrapper .article-custom-section {
   display: none;
   padding: 0 5px 5px 10px;
   margin-left: 25px;
@@ -107,6 +106,7 @@ body {
   margin-right: 10px;
 }
 
-#extbtnBack:before {
-  content: '\f0a9';
+#extWrapper {
+  display: flex;
+  flex-direction: column;
 }
