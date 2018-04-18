@@ -26,6 +26,7 @@
   height: auto;
 }
 
+#extWrapper > a,
 #extWrapper > div.article-custom-section.default > a,
 #extWrapper > div.article-custom-section > a {
   width: 175px;
