@@ -38,13 +38,13 @@
   clear: both;
 }
 
-#extWrapper h1 {
+#extWrapper h4 {
   cursor: pointer;
   color: #5e5e5e;
   opacity: .5;
 }
 
-#extWrapper h1.active {
+#extWrapper h4.active {
   color: #428bca;
   opacity: 1;
 }
@@ -60,17 +60,10 @@ body {
   counter-reset: extCounter;
 }
 
-#extWrapper h1:before {
+#extWrapper h4:before {
   counter-increment: extCounter;
   content: counter(extCounter, decimal) ") ";
   font-weight: 600;
   float:left;
   margin-right: 10px;
-}
-
-#extWrapper a {
-  float: right;
-  width: 175px;
-  height: 175px;
-  margin: 0 0 25px 25px;
 }
