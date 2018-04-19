@@ -6,7 +6,7 @@
   font-family: "Segoe UI",SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-#extWrapper h1 {
+#extWrapper h4 {
   font-size: 16px;
   color: #428bca;
 }
@@ -38,43 +38,29 @@
   clear: both;
 }
 
-#extWrapper h1.accordion-toggle {
+#extWrapper h1 {
   cursor: pointer;
   color: #5e5e5e;
   opacity: .5;
 }
-#extWrapper h1.accordion-toggle.active {
+
+#extWrapper h1.active {
   color: #428bca;
   opacity: 1;
 }
 
-#extWrapper .article-custom-section {
+#extWrapper .panel-collapse.collapse.in {
   display: none;
   padding: 0 5px 5px 0;
   margin-left: 25px;
   min-height: 175px;
 }
 
-#extWrapper .article-custom-section.default {
-  display: block;
-//  margin-bottom: 50px;
-}
-
-/*
-#extWrapper h1.accordion-toggle:after {
-  content: '\2B9A';
-  float: left;
-}
-#extWrapper h1.accordion-toggle.active:after {
-  content: "\2B9B";
-}
-*/
-
 body {
   counter-reset: extCounter;
 }
 
-#extWrapper h1.accordion-toggle:before {
+#extWrapper h1:before {
   counter-increment: extCounter;
   content: counter(extCounter, decimal) ") ";
   font-weight: 600;
@@ -87,27 +73,4 @@ body {
   width: 175px;
   height: 175px;
   margin: 0 0 25px 25px;
-}
-
-#extWrapper a.expand {
-  width: auto;
-  height: auto;
-}
-
-#extWrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  float: right;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-#extWrapper .modal-body {
-  max-width: 800px;
-  max-height: 600px;
-}
-
-#extWrapper .modal-body img {
-  max-width: 100%;
-  max-height: 100%;
 }
