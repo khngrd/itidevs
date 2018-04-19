@@ -65,4 +65,11 @@ body {
   font-weight: 600;
   float:left;
   margin-right: 10px;
+
+  
+#extWrapper a.pop {
+  float: right;
+  width: 175px;
+  height: 175px;
+  margin: 0 0 25px 25px;
 }
