@@ -7,12 +7,12 @@
 }
 
 #extWrapper h4 {
-  font-size: 16px;
-  color: #428bca;
+  //font-size: 16px;
+  //color: #428bca;
 }
 
 #extWrapper ol {
-  display: block;
+  //display: block;
   padding-left: 0;
 }
 
@@ -38,20 +38,20 @@
   clear: both;
 }
 
-#extWrapper h4 {
-  cursor: pointer;
-  color: #5e5e5e;
+/*
+#extWrapper h4 a {
   opacity: .5;
 }
 
-#extWrapper h4.active {
+#extWrapper h4 a {
   color: #428bca;
   opacity: 1;
 }
+*/
 
 #extWrapper .panel-collapse.collapse.in {
-  padding: 0 5px 5px 0;
-  margin-left: 25px;
+  //padding: 0 5px 5px 0;
+  //margin-left: 25px;
   min-height: 175px;
 }
 
@@ -68,8 +68,8 @@ body {
 
   
 #extWrapper a.pop {
-  float: right;
-  width: 175px;
-  height: 175px;
-  margin: 0 0 25px 25px;
+  //float: right;
+  width: 50px;
+  height: 50px;
+  //rgin: 0 0 25px 25px;
 }
