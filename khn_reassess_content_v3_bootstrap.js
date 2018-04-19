@@ -56,10 +56,6 @@ jq2(".panel-heading a", extWrapper).each(function () {
     jq2(this).val(j);
 });
 
-jq2(".panel-heading", extWrapper).each(function () {
-    jq2(this).parent().before(this);
-});
-
 jq2(extWrapper).append("<div class='modal fade' id='imagemodal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal'><span aria-hidden='true'>&times;</span><span class='sr-only'>Close</span></button></div><div class='modal-body'><img src='' id='imagepreview'></div></div></div></div>");
 
 jq2("img", extWrapper).each(function () {
@@ -79,7 +75,6 @@ jq2("img", extWrapper).click(function () {
 
 jq2("#accordion.panel-group", extWrapper).find("> p").wrapAll("<div class='panel panel-test' />");
 
-jq2('head').append('<link rel="stylesheet" href="https://rawgit.com/khngrd/itidevs/master/khn_styles.css" type="text/css" />');
 
 jq2("h4", extWrapper).each(function () {
     var extHead = jq2(this).children().eq(0).detach();
@@ -90,3 +85,5 @@ jq2("h4", extWrapper).each(function () {
 jq2(".panel-heading", extWrapper).each(function () {
     jq2(this).parent().before(this);
 });
+
+jq2('head').append('<link rel="stylesheet" href="https://rawgit.com/khngrd/itidevs/master/khn_styles.css" type="text/css" />');
