@@ -27,6 +27,7 @@ jq2("h4", extWrapper).each(function (index) {
 
 var k = 0;
 jq2(".panel", extWrapper).each(function () {
+    jq2(this).wrap("<div class='panel panel-default' />");
     jq2(this).each(function () {
         k++;
         var newID = 'collapse'+k;
@@ -45,12 +46,6 @@ jq2(".panel-collapse.collapse", extWrapper).each(function () {
 jq2("h4", extWrapper).each(function () {
     jq2(this).wrap("<div class='panel-heading' />")
         .append("<a data-toggle='collapse' data-parent='#accordion' href=''>" + jq2(this).text() + "</a>")
-});
-
-jq2("h4", extWrapper).each(function () {
-    var extHead = jq2(this).children().eq(0).detach();
-    jq2(this).empty();
-    extHead.appendTo(this);
 });
 
 var j = 0;
@@ -82,4 +77,16 @@ jq2("img", extWrapper).click(function () {
     jq2('#imagemodal').modal('show');
 });
 
+jq2("#accordion.panel-group", extWrapper).find("> p").wrapAll("<div class='panel panel-test' />");
+
 jq2('head').append('<link rel="stylesheet" href="https://rawgit.com/khngrd/itidevs/master/khn_styles.css" type="text/css" />');
+
+jq2("h4", extWrapper).each(function () {
+    var extHead = jq2(this).children().eq(0).detach();
+    jq2(this).empty();
+    extHead.appendTo(this);
+});
+
+jq2(".panel-heading", extWrapper).each(function () {
+    jq2(this).parent().before(this);
+});
