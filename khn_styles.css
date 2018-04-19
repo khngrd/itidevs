@@ -50,7 +50,6 @@
 }
 
 #extWrapper .panel-collapse.collapse.in {
-  display: none;
   padding: 0 5px 5px 0;
   margin-left: 25px;
   min-height: 175px;
