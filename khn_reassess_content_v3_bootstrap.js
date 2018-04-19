@@ -1,4 +1,5 @@
 // $.getScript('https://rawgit.com/khngrd/itidevs/master/khn_reassess_content_v3_bootstrap.js');
+
 jq2 = jQuery.noConflict();
 
 var extWrapper = jq2("#article, .kb_article");
@@ -32,6 +33,12 @@ jq2(".panel", extWrapper).each(function () {
         jq2(this).attr('id', newID);
         jq2(this).attr('class', 'panel-collapse collapse');
         jq2(this).val(k);
+    });
+});
+
+jq2(".panel-collapse.collapse", extWrapper).each(function () {
+    jq2(this).each(function () {
+        jq2(this).wrapInner("<div class='panel-body' />")
     });
 });
 
