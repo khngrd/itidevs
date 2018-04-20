@@ -1,0 +1,54 @@
+#extWrapper {
+    padding-bottom: 30px;
+    font-size: 15px;
+    font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#extWrapper ol {
+    padding-left: 0;
+}
+
+#extWrapper  > div:first-child > ul  {
+    background-color: #f2f2f2;
+    color: #000;
+    padding: 15px 15px 15px 10px;
+}
+
+#extWrapper > div:first-child > ul > li:first-child {
+    list-style-type: none;
+    color: firebrick;
+}
+
+#extWrapper ol li,
+#extWrapper ul li {
+    margin-bottom: 8px;
+}
+
+#extWrapper hr {
+    clear: both;
+}
+
+#extWrapper h3 {
+    font-size: 16px;
+    font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+    counter-reset: extCounter;
+}
+
+#extWrapper h3:before {
+    counter-increment: extCounter;
+    content: counter(extCounter, decimal) ") ";
+    font-weight: 600;
+    float: left;
+    margin-right: 10px;
+}
+
+#extWrapper > div > a > img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    margin: 15px 0;
+    box-shadow:rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
