@@ -1,4 +1,5 @@
 // $.getScript('https://rawgit.com/khngrd/itidevs/master/reassess_content.js');
+// jQuery.getScript('https://rawgit.com/khngrd/itidevs/master/reassess_content.js');
 
 jq2 = jQuery.noConflict();
 
