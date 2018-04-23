@@ -1,65 +1,142 @@
-// $.getScript('https://rawgit.com/khngrd/itidevs/master/khn_reassess_content.js');
+//  chrome >
+//  ctr + shift + j
+//  jQuery.getScript('https://rawgit.com/khngrd/itidevs/master/reassess_content.js');
+//  > enter
 
-jq2 = jQuery.noConflict();
+$q = jQuery.noConflict();
 
-var extWrapper = jq2("#article, .kb_article");
+// remote
+$q('head').append('<link rel="stylesheet" href="https://rawgit.com/khngrd/itidevs/master/reassess_content.css" type="text/css" />');
 
-jq2(extWrapper).wrapInner("<div id='extWrapper' style='padding-bottom:30px' />");
+// local
+// $q('head').append('<link rel="stylesheet" href="http://127.0.0.1:8887/reassess_content.css" type="text/css" />');
+// jQuery.getScript('http://127.0.0.1:8887/reassess_content.js');
 
-jq2(extWrapper).html(function (i, html) {
-    return html.replace(/&nbsp;/g, '');
-});
+var $wrapper = $q("#article, .kb_article");
 
-jq2("p:empty").remove()
+var $modal =
+    "<div class='modal fade' id='imagemodal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>" +
+    "<div class='modal-dialog'>" +
+    "<div class='modal-content'>" +
+    "<div class='modal-header'>" +
+    "<button type='button' class='close' data-dismiss='modal'>" +
+    "<span aria-hidden='true'>&times;</span>" +
+    "<span class='sr-only'>Close</span>" +
+    "</button>" +
+    "</div>" +
+    "<div class='modal-body' id='#modal-body'>" +
+    "<img src='' id='imagepreview' class='imagepreview'>" +
+    "</div>" +
+    "</div>" +
+    "</div>";
 
-jq2("img", extWrapper).each(function () {
-    if (jq2(this).length) {
-        jq2(this)
-            .wrap("<a href='' class='pop' />")
-            .parent()
-            .attr("src", jq2(this).attr("src"))
-            .unwrap()
+var $header = ('h3');
+
+var $headers = $q('h1, h2, h3, h4, h5, h6', $wrapper);
+
+var $image = 0;
+
+var $lists = $q('ul, ol', $wrapper)
+
+var $images = $q('img', $wrapper)
+
+$q($wrapper)
+    .wrapInner("<div />")
+    .find(">:first-child")
+    .attr('id', 'extWrapper')
+    .prepend('<' + $header + '/>')
+    .append($modal)
+    .find(".modal-dialog")
+    .addClass("modal-md");
+
+if ($headers.length) {
+    $headers
+    .replaceWith(function () {
+        return $q('<' + $header + '/>')
+            .append($q(this).contents());
+        });
+    $q($header, $wrapper)
+        .each(function (index) {
+            $q(this)
+                .nextUntil('' + $header + '')
+                .andSelf()
+                .wrapAll("<div />")
+                .parent()
+                .addClass('container-fluid')
+        });
     }
+
+if ($lists.length) {
+    $lists.slice(1).hide()
+        .replaceWith(function () {
+            return $q('<ul />').append($q(this).contents());
+        });
+}
+
+if ($images.length) {
+    $q(this).each(function () {
+        $images
+        .wrap("<a />")
+        .parent()
+        .attr("href", '')
+        .addClass("pop")
+        .unwrap()
+        .append("<hr>");
+    })
+    $images.each(function () {
+        $images
+        .parent()
+        $image++;
+        var newID = '#img-' + $image;
+        $q(this).attr('href', newID);
+        $q(this).val($image)
+    })
+    .click(function () {
+        $q('#imagepreview')
+            .attr('src', $q(this).attr('src'))
+            .css("max-width", "100%")
+        $q('#imagemodal').modal('show')
+    });
+}
+
+$q($header, $wrapper).each(function () {
+    if ($q(this).html().replace(/\s|&nbsp;/g, '').length == 0)
+        $q(this).remove();
 });
 
-jq2("a", extWrapper).each(function (index) {
-    jq2(this)
-        .nextUntil("a")
-        .andSelf()
-        .wrapAll("<div class='article-custom-section' />")
+$q('p', $wrapper).each(function () {
+    if ($q(this).html().replace(/\s|&nbsp;/g, '').length == 0)
+        $q(this).remove();
 });
 
-jq2(".article-custom-section:first").addClass("default").css("display", "block");
+function modalmix(element) {
+    this.$element = $q(element);
+    this.$content = this.$element.find('.modal-content');
+    var borderWidth = this.$content.outerHeight() - this.$content.innerHeight();
+    var dialogMargin = $q(window).width() < 768 ? 20 : 60;
+    var contentHeight = $q(window).height() - (dialogMargin + borderWidth);
+    var headerHeight = this.$element.find('.modal-header').outerHeight() || 0;
+    var footerHeight = this.$element.find('.modal-footer').outerHeight() || 0;
+    var maxHeight = contentHeight - (headerHeight + footerHeight);
 
+    this.$content.css({
+        'overflow': 'hidden'
+    });
 
-jq2("h1", extWrapper).each(function () {
-    jq2(this).addClass("accordion-toggle")
-    jq2(this).parent().before(this);
-})
+    this.$element
+        .find('.modal-body').css({
+            'max-height': maxHeight,
+            'overflow-y': 'auto'
+        });
+}
 
-
-jq2("h1", extWrapper).first().addClass("active");
-
-jq2(".article-custom-section", extWrapper).first().addClass("active");
-
-
-jq2('#extWrapper').find('.accordion-toggle').click(function () {
-    jq2(this).next().slideToggle('fast');
-    jq2(".article-custom-section").not(jq2(this).next()).slideUp('fast');
+$q('.modal').on('show.bs.modal', function () {
+    $q(this).show();
+    modalmix(this);
 });
 
-jq2("h1", extWrapper).click(function () {
-    jq2("h1", extWrapper).removeClass("active");
-    jq2(this).addClass("active");
-});
-
-jq2('head').append('<link rel="stylesheet" href="https://rawgit.com/khngrd/itidevs/master/khn_styles.css" type="text/css" />');
-
-// jq2(extWrapper).append("<div class='modal fade' id='imagemodal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal'><span aria-hidden='true'>&times;</span><span class='sr-only'>Close</span></button><h4 class='modal-title' id='myModalLabel'>Image preview</h4></div><div class='modal-body'><img src='' id='imagepreview'></div><div class='modal-footer'><button type='button' class='btn btn-default' data-dismiss='modal'>Close</button></div></div></div></div>");
-
-jq2(extWrapper).append("<div class='modal fade' id='imagemodal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal'><span aria-hidden='true'>&times;</span><span class='sr-only'>Close</span></button></div><div class='modal-body'><img src='' id='imagepreview'></div></div></div></div>");
-
-jq2("img", extWrapper).click(function () {
-    jq2('#imagepreview').attr('src', jq2(this).attr('src'));
-    jq2('#imagemodal').modal('show');
+$q(window).resize(function () {
+    if ($q('.modal.in').length != 0) {
+        modalmix($q('.modal.in'));
+    }
 });
