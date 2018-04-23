@@ -89,3 +89,7 @@ body {
     text-align: left;
     vertical-align: middle;
 }
+
+#extWrapper .modal-header button.close {
+    opacity: 1;
+}
