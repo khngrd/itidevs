@@ -2,17 +2,50 @@
 //  ctr + shift + j
 //  jQuery.getScript('https://rawgit.com/khngrd/itidevs/master/reassess_content.js');
 //  > enter
-
-$q = jQuery.noConflict();
-
-// remote
-$q('head').append('<link rel="stylesheet" href="https://cdn.rawgit.com/khngrd/itidevs/master/reassess_content.css" type="text/css" />');
-
-// local
-// $q('head').append('<link rel="stylesheet" href="http://127.0.0.1:8887/reassess_content.css" type="text/css" />');
 // jQuery.getScript('http://127.0.0.1:8887/reassess_content.js');
 
-var $wrapper = $q("#article, .kb_article");
+// $q = jQuery.noConflict();
+$q = jQuery;
+
+var DEBUG = false;
+if (!DEBUG) {
+    if (!window.console) window.console = {};
+    var methods = ["log", "debug", "warn", "info"];
+    for (var i = 0; i < methods.length; i++) {
+        console[methods[i]] = function () {};
+    }
+    $q('head').append('<link rel="stylesheet" href="https://cdn.rawgit.com/khngrd/itidevs/master/reassess_content.css" type="text/css" />');
+
+} else {
+    $q('head').append('<link rel="stylesheet" href="http://127.0.0.1:8887/reassess_content.css" type="text/css" />');
+    console.log('/** RUNNING WITH LOCAL ASSETS **/')
+}
+
+$q.fn.log = function (max) {
+    max = (max == null ? 15 : Math.max(max, 0));
+    var arr = this.slice(0, max).toArray();
+    for (var i = 1; i < arr.length; i += 2) {
+        arr.splice(i, 0, ",");
+    }
+    arr.unshift("<jQuery> length %".replace("%", this.length), "[");
+    if (this.length > max) {
+        if (max > 0) {
+            arr.push(",");
+        }
+        arr.push("(% more)".replace("%", this.length - max));
+    }
+    arr.push("]");
+    console.log.apply(console, arr);
+    return this;
+};
+
+/*********************************************************************************** */
+
+var $spwrapper = $q(".kb_article");
+
+var $snwrapper = $q("#article");
+
+var $wrappers = $spwrapper, $snwrapper;
 
 var $modal =
     "<div class='modal fade' id='imagemodal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>" +
@@ -32,44 +65,58 @@ var $modal =
 
 var $header = ('h3');
 
-var $headers = $q('h1, h2, h3, h4, h5, h6', $wrapper);
+var $headers = $q('h1, h2, h3, h4, h5, h6', $wrappers);
 
 var $image = 0;
 
-var $lists = $q('ul, ol', $wrapper)
+var $lists = $q('ul, ol', $wrappers)
 
-var $images = $q('img', $wrapper)
+var $images = $q('img', $wrappers)
 
-$q($wrapper)
+var $paragraph = $q('p', $wrappers)
+
+if ($wrappers.length) {
+    $wrappers
     .wrapInner("<div />")
     .find(">:first-child")
     .attr('id', 'extWrapper')
     .prepend('<' + $header + '/>')
-    .append($modal)
-    .find(".modal-dialog")
-    .addClass("modal-md");
+    if ($spwrapper.length) {
+        $spwrapper
+            .find("#extWrapper")
+            .append($modal)
+            .find(".modal-dialog")
+            .addClass("modal-md");
+    }
+
+}
 
 if ($headers.length) {
     $headers
-    .replaceWith(function () {
-        return $q('<' + $header + '/>')
-            .append($q(this).contents());
+        .replaceWith(function () {
+            return $q('<' + $header + '/>').log()
+                .append($q(this).contents());
         });
-    $q($header, $wrapper)
-        .each(function (index) {
-            $q(this)
-                .nextUntil('' + $header + '')
-                .andSelf()
-                .wrapAll("<div />")
-                .parent()
-                .addClass('container-fluid')
+        $q($header, $wrappers)
+            .each(function (index) {
+                $q(this)
+                    .nextUntil('' + $header + '')
+                    .andSelf()
+                    .wrapAll("<div />")
+                    .parent()
+                    .addClass('container-fluid').log(0)
         });
-    }
+        $q($header, $wrappers)
+            .each(function () {
+                if ($q(this).html().replace(/\s|&nbsp;/g, '').length == 0)
+                    $q(this).remove().log(0);
+        });
+}
 
 if ($lists.length) {
     $lists.slice(1).hide()
         .replaceWith(function () {
-            return $q('<ul />').append($q(this).contents());
+            return $q('<ul />').append($q(this).contents()).log(0);
         });
 }
 
@@ -98,16 +145,6 @@ if ($images.length) {
         $q('#imagemodal').modal('show')
     });
 }
-
-$q($header, $wrapper).each(function () {
-    if ($q(this).html().replace(/\s|&nbsp;/g, '').length == 0)
-        $q(this).remove();
-});
-
-$q('p', $wrapper).each(function () {
-    if ($q(this).html().replace(/\s|&nbsp;/g, '').length == 0)
-        $q(this).remove();
-});
 
 function modalmix(element) {
     this.$element = $q(element);
@@ -139,4 +176,9 @@ $q(window).resize(function () {
     if ($q('.modal.in').length != 0) {
         modalmix($q('.modal.in'));
     }
+});
+
+$q('p, li', $wrappers).each(function () {
+    var $this = $q(this).log(0);
+    $this.html($this.html().replace(/&nbsp;/g, ''));
 });
