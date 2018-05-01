@@ -17,8 +17,8 @@ if (!DEV) {
         $q('head').append('<link rel="stylesheet" href="http://127.0.0.1:8887/reassess_view.css" type="text/css" />');
         console.log('/** RUNNING WITH LOCAL ASSETS **/')
     } else {
-        $q('head').append('<link rel="stylesheet" href="http://192.168.56.1:8887/reassess_content.css" type="text/css" />');
-        $q('head').append('<link rel="stylesheet" href="http://192.168.56.1:8887/reassess_view.css" type="text/css" />');
+        $q('head').append('<link rel="stylesheet" href="https://cdn.rawgit.com/khngrd/itidevs/master/dev_reassess_content.css" type="text/css" />');
+        $q('head').append('<link rel="stylesheet" href="https://cdn.rawgit.com/khngrd/itidevs/master/dev_reassess_view.css" type="text/css" />');
         console.log('/** RUNNING WITH DEVELOPMENT ASSETS **/')
     }
 }
