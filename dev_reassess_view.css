@@ -1,0 +1,210 @@
+.v0fb269305b3212000d7ec7ad31f91ae2 .nav a,
+.panel-heading h4,
+.panel-primary h4 {
+    font-family: inherit !important;
+}
+
+.navbar-inverse.navbar {
+    background-color: #3a3f51 !important;
+}
+
+.nav-sm>li>a {
+    padding: 5px !important;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 14px;
+    background-color: #f0f3f4 !important;
+}
+
+.panel-heading,
+.panel-primary {
+    background-color: #59a54f !important;
+}
+.panel-title {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #fff !important;
+}
+
+#extWrapper hr {
+    border-top-color: rgba(58,63,81,0.28);
+    margin: 20px 0 !important;
+    clear: both;
+}
+.sp-row-content.row.ext {
+    padding-bottom: 10px;
+}
+
+header {
+    background-color: #3a3f51 !important;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) inset 0px 1px 2px;
+}
+
+.vb225e7f8db1df24022ef7cfeaf961900 .navbar {
+    border-bottom: 0;
+}
+
+#xdd839d7d5b7212000d7ec7ad31f91ace>form>div>span>button {
+    border-radius: 0;
+    border:  0;
+    /* height: 100%; */
+    max-height: 95%;
+    margin-top: -1px;
+    box-shadow: rgba(0, 0, 0, 0.12) inset 0px 1px 3px, rgba(0, 0, 0, 0.24) inset 0px 1px 2px;
+}
+#xdd839d7d5b7212000d7ec7ad31f91ace>form>div>span>button:hover {
+    background-color: #59a54f;
+}
+
+#xdd839d7d5b7212000d7ec7ad31f91ace>form>div>input {
+    border-radius: 0;
+    border:  0;
+    box-shadow: rgba(0, 0, 0, 0.12) inset 0px 1px 3px, rgba(0, 0, 0, 0.24) inset 0px 1px 2px;
+}
+
+.breadcrumbs-container>.container,
+.breadcrumbs-container {
+    background-color: #f0f3f4;
+}
+
+.breadcrumbs-container>.container .sp-row-content {
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.12) inset 0px 1px 3px, rgba(0, 0, 0, 0.24) inset 0px 1px 2px;
+}
+
+.breadcrumbs-container {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.sp-row-content.row .nav a {
+    line-height: 24px;
+    /* font-weight: bold; */
+}
+
+.vb225e7f8db1df24022ef7cfeaf961900 .navbar-brand img {
+    margin-top: 5px;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #bdc0c4;
+}
+#xee114f30d7000200a9ad1e173e24d471,
+.breadcrumbs-container a,
+#xfb314f30d7000200a9ad1e173e24d4a4 {
+    font-size: 12px;
+}
+
+#xdd839d7d5b7212000d7ec7ad31f91ace .btn {
+    padding-left: 15px;
+}
+
+#x020332605b032200a9ad09ed5a62bcf0 {
+    padding: 10px 15px 10px 15px !important;
+    padding-bottom:  0;
+}
+
+.about-outer-span {
+    color: #5e5e5e;
+    opacity: .65;
+}
+
+.sp-row-content .ext:first-of-type {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.sp-row-content.row.ext {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-pills > li:last-of-type a {
+    color: #428bca !important;
+    font-weight: bold;
+}
+
+#extWrapper>div>div>div {
+    display: flex;
+    flex-direction: column;
+}
+
+#extWrapper a img {
+    flex-grow: 1;
+    margin: 5px;
+}
+
+.container {
+    padding-right: 15px;
+}
+
+#xa872101ddb95b6401e0b789dae9619ce {
+    display:  none;
+}
+#x22839d7d5b7212000d7ec7ad31f91a8a {
+    padding-left: 10px;
+}
+
+@media (min-width: 768px) {
+    .breadcrumbs-container>.container,
+    .navbar-inverse.navbar {
+        width: 750px;
+    }
+    .sp-row-content.row.ext {
+        padding-bottom: 10px;
+    }
+    .sp-row-content .ext:first-of-type {
+        padding-left: 0;
+    }
+    .col-sm-3.ext {
+        padding-right: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .breadcrumbs-container>.container,
+    .navbar-inverse.navbar {
+        width: 970px;
+    }
+    .sp-row-content.row.ext {
+        padding-bottom: 0;
+    }
+    .col-md-3 {
+        padding-right: 0;
+    }
+    #xa872101ddb95b6401e0b789dae9619ce {
+        display:  block;
+    }
+}
+
+@media (min-width: 1200px) {
+    .breadcrumbs-container>.container,
+    .navbar-inverse.navbar {
+        width: 1170px;
+        margin: 0 auto;
+        padding-left: 5px;
+    }
+    .sp-row-content .ext:first-of-type {
+        padding-left: 10px;
+    }
+    .sp-row-content .ext:last-of-type {
+        padding-right: 0;
+    }
+    .container {
+        padding-left:  0;
+    }
+    ul.nav-pills {
+        margin-left: -20px;
+    }
+    .nav-sm>li>a {
+        padding-bottom: 0px !important;
+    }
+}
+
+.fa.fa-expand {
+    color: #109000;
+}
