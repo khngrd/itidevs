@@ -1,14 +1,12 @@
 //  chrome >
 //  ctr + shift + j
-//  jQuery.getScript('https://rawgit.com/khngrd/itidevs/master/reassess_content.js');
+//  jQuery.getScript('https://rawgit.com/khngrd/itidevs/master/dev_reassess_content.js');
 //  > enter
-// jQuery.getScript('http://127.0.0.1:8887/reassess_content.js');
 
-// $q = jQuery.noConflict();
 $q = jQuery;
 
 var DEV = true;
-var NETWORK = false;
+var NETWORK = true;
 var DEBUG = true;
 
 if (!DEV) {
