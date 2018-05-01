@@ -1,36 +1,17 @@
 //  chrome >
 //  ctr + shift + j
-//  jQuery.getScript('https://rawgit.com/khngrd/itidevs/master/dev_reassess_content.js');
+//  jQuery.getScript('https://rawgit.com/khngrd/itidevs/master/reassess_content.js');
 //  > enter
+// jQuery.getScript('http://127.0.0.1:8887/reassess_content.js');
 
 $q = jQuery;
 
-var DEV = true;
-var NETWORK = true;
-var DEBUG = true;
+var $DEV = true
+var $NETWORK = true;
+var $DEBUG = true;
 
-if (!DEV) {
-    $q('head').append('<link rel="stylesheet" href="https://cdn.rawgit.com/khngrd/itidevs/master/reassess_content.css" type="text/css" />');
+if (!$DEBUG) {
 } else {
-    if (!NETWORK) {
-        $q('head').append('<link rel="stylesheet" href="http://127.0.0.1:8887/reassess_content.css" type="text/css" />');
-        $q('head').append('<link rel="stylesheet" href="http://127.0.0.1:8887/reassess_view.css" type="text/css" />');
-        console.log('/** RUNNING WITH LOCAL ASSETS **/')
-    } else {
-        $q('head').append('<link rel="stylesheet" href="https://cdn.rawgit.com/khngrd/itidevs/master/dev_reassess_content.css" type="text/css" />');
-        $q('head').append('<link rel="stylesheet" href="https://cdn.rawgit.com/khngrd/itidevs/master/dev_reassess_view.css" type="text/css" />');
-        console.log('/** RUNNING WITH DEVELOPMENT ASSETS **/')
-    }
-}
-
-if (!DEBUG) {
-} else {
-    if (!window.console) window.console = {};
-    var methods = ["log", "debug", "warn", "info"];
-    for (var i = 0; i < methods.length; i++) {
-        console[methods[i]] = function () {};
-    };
-
     $q.fn.log = function (max) {
         max = (max == null ? 15 : Math.max(max, 0));
         var arr = this.slice(0, max).toArray();
@@ -48,8 +29,24 @@ if (!DEBUG) {
         console.log.apply(console, arr);
         return this;
     };
+    console.log('/-------------------- debugging enabled ---------------------------------------/')
+
 }
-console.log("DEBUGGING ENABLED");
+
+if (!$DEV) {
+    $q('head').append('<link rel="stylesheet" href="https://cdn.rawgit.com/khngrd/itidevs/master/reassess_content.css" type="text/css" />');
+} else {
+    if (!$NETWORK) {
+        console.log('/-------------------- running with local development assets -------------------/');
+        $q('head').append('<link rel="stylesheet" href="http://127.0.0.1:8887/reassess_content.css" type="text/css" />').log(0);
+        $q('head').append('<link rel="stylesheet" href="http://127.0.0.1:8887/reassess_view.css" type="text/css" />');
+    } else {
+        console.log('/-------------------- running with networked development assets ---------------/');
+        $q('head').append('<link rel="stylesheet" href="https://cdn.rawgit.com/khngrd/itidevs/master/dev_reassess_content.css" type="text/css" />');
+        $q('head').append('<link rel="stylesheet" href="https://cdn.rawgit.com/khngrd/itidevs/master/dev_reassess_view.css" type="text/css" />');
+    }
+}
+
 
 /*********************************************************************************** */
 
@@ -75,9 +72,9 @@ var $modal =
     "</div>" +
     "</div>";
 
-var $header = ('h3');
+var $header = ('h3')
 
-var $headers = $q('h1, h2, h3, h4, h5, h6', $wrappers);
+var $headers = $q('h1, h2, h3, h4, h5, h6', $wrappers)
 
 var $image = 0;
 
@@ -212,7 +209,7 @@ $q($types).each(function () {
         .wrapAll("<div class='flex' />")
 })
 
-if (!DEV) {
+if (!$DEV) {
 } else {
         $q('head').append('<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css" />');
 
@@ -263,5 +260,4 @@ if (!DEV) {
         });
         $q(".nav-pills li:first a").prepend("<i class='fa fa-home' aria-hidden='true' style='font-size:20px; padding: 0; margin: 0;' ></i>");
 
-        console.log('/** SANDBOX MODE **/')
     }
