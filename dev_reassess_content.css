@@ -1,0 +1,90 @@
+#extWrapper ol {
+    padding-left: 0;
+}
+#extWrapper  > div:first-of-type {
+    margin-top: 0;
+}
+
+#extWrapper > div:first-child > ul  {
+    background-color: #f2f2f2;
+    color: #000;
+    padding: 15px 15px 15px 10px;
+}
+
+#extWrapper > div:first-child > ul > li:first-child {
+    list-style-type: none;
+    color: firebrick;
+}
+
+#extWrapper ul {
+    margin-left: 0;
+    padding-left: 20px
+}
+
+#extWrapper ol li,
+#extWrapper ul li {
+    margin-bottom: 8px;
+}
+
+#extWrapper hr {
+    clear: both;
+}
+
+#extWrapper h3 {
+    font-family: montserrat light;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+body {
+    counter-reset: extCounter;
+}
+
+#extWrapper h3:before {
+    counter-increment: extCounter;
+    content: counter(extCounter, decimal) " / ";
+    font-weight: 600;
+    float: left;
+    margin-right: 10px;
+}
+
+#extWrapper a > img {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: cover;
+    margin: 15px 0;
+    box-shadow:rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+#extWrapper .modal-content {
+    position: relative;
+    display: table;
+    overflow-y: auto;
+    overflow-x: auto;
+    width: auto;
+    min-width: 300px;
+    margin: auto;
+}
+
+#extWrapper .modal {
+    text-align: center;
+    padding: 0 !important;
+}
+
+#extWrapper .modal:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px;
+}
+
+#extWrapper .modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+#extWrapper .modal-header button.close {
+    opacity: 1;
+}
