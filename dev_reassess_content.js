@@ -7,7 +7,7 @@
 $q = jQuery;
 
 var $DEV = true
-var $NETWORK = false;
+var $NETWORK = true;
 var $DEBUG = true;
 
 if (!$DEBUG) {
