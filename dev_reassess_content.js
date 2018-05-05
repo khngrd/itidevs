@@ -38,10 +38,10 @@ if (!$DEV) {
 } else {
     if (!$NETWORK) {
         console.log('/-------------------- running with local development assets -------------------/');
-        $q('head').append('<link rel="stylesheet" href="http://127.0.0.1:8887/dev_reassess_content.css" type="text/css" />');
-        $q('head').append('<link rel="stylesheet" href="http://127.0.0.1:8887/dev_reassess_view.css" type="text/css" />');
-        //$q('head').append('<link rel="stylesheet" href="https://cdn.rawgit.com/khngrd/itidevs/master/dev_reassess_content.css" type="text/css" />');
-        //$q('head').append('<link rel="stylesheet" href="https://cdn.rawgit.com/khngrd/itidevs/master/dev_reassess_view.css" type="text/css" />');
+        //$q('head').append('<link rel="stylesheet" href="http://127.0.0.1:8887/dev_reassess_content.css" type="text/css" />');
+        //$q('head').append('<link rel="stylesheet" href="http://127.0.0.1:8887/dev_reassess_view.css" type="text/css" />');
+        $q('head').append('<link rel="stylesheet" href="https://cdn.rawgit.com/khngrd/itidevs/master/dev_reassess_content.css" type="text/css" />');
+        $q('head').append('<link rel="stylesheet" href="https://cdn.rawgit.com/khngrd/itidevs/master/dev_reassess_view.css" type="text/css" />');
     } else {
         console.log('/-------------------- running with networked development assets ---------------/');
         $q('head').append('<link rel="stylesheet" href="https://cdn.rawgit.com/khngrd/itidevs/master/dev_reassess_content.css" type="text/css" />');
