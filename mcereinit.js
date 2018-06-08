@@ -200,7 +200,7 @@ var mceReady = window.setInterval(function () {
     if ($calls < 10) {
         $calls += 1;
         if (!toolbarExists() ) {
-            console.log('attempting to re-initialize tinymce.. ' + $calls + '/10');
+            //console.log('attempting to re-initialize tinymce.. ' + $calls + '/10');
         } else {
             CachedEvent.after('glideform.initialized', function (gf) {
                 var elements = document.querySelectorAll('.htmlField');
