@@ -38,6 +38,7 @@ function mceInit(id, config) {
         powerpaste_html_import: 'clean',
         remove_trailing_brs: true,
         dialog_type: 'modal',
+        inline_styles: true,
         target_list: [{
                 title: 'None(Use Implicit)',
                 value: ''
@@ -63,7 +64,7 @@ function mceInit(id, config) {
         //  'directionality emoticons fullscreen ',
         'fullscreen ',
         //  'hr insertdatetime layer lists importcss nonbreaking',
-        'hr insertdatetime lists',
+        'hr lists',
         //  'noneditable pagebreak print save searchreplace tabfocus',
         '',
         //  'table template textcolor textpattern visualblocks visualchars powerpaste',
