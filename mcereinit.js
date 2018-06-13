@@ -126,13 +126,13 @@ function mceInit(id, config) {
                         var new_selection_content = '<div id="intro">' + content + '</div>';
                         ed.execCommand('insertHTML', false, new_selection_content);
                     }
-                }, {
+                /*}, {
                     icon: false,
                     text: '_dev_stripTags',
                     onclick: function () {
                         var el = tinymce.activeEditor.selection.getContent({ format : 'text' });
                         tinymce.activeEditor.selection.setContent(el);
-                    }
+                    }*/
                 }],
             });
             ed.on('init', function (e) {
