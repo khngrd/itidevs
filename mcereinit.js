@@ -40,6 +40,10 @@ function mceInit(id, config) {
         dialog_type: 'modal',
         inline_styles: false,
         entity_encoding : "raw",
+        valid_classes: {
+            '*': 'cheatsheet', // Global classes
+            'cheatsheet': 'anchor' // Link specific classes
+        }
         target_list: [{
                 title: 'None(Use Implicit)',
                 value: ''
