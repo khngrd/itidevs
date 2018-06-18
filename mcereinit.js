@@ -39,6 +39,7 @@ function mceInit(id, config) {
         remove_trailing_brs: true,
         dialog_type: 'modal',
         inline_styles: false,
+        entity_encoding : "raw",
         target_list: [{
                 title: 'None(Use Implicit)',
                 value: ''
