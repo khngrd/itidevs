@@ -38,7 +38,7 @@ function mceInit(id, config) {
         powerpaste_html_import: 'clean',
         remove_trailing_brs: true,
         dialog_type: 'modal',
-        inline_styles: true,
+        inline_styles: false,
         target_list: [{
                 title: 'None(Use Implicit)',
                 value: ''
