@@ -43,7 +43,7 @@ function mceInit(id, config) {
         valid_classes: {
             '*': 'cheatsheet', // Global classes
             'cheatsheet': 'anchor' // Link specific classes
-        }
+        },
         target_list: [{
                 title: 'None(Use Implicit)',
                 value: ''
@@ -75,7 +75,7 @@ function mceInit(id, config) {
         //  'table template textcolor textpattern visualblocks visualchars powerpaste',
         ' template powerpaste',
         //  'snLink listitem_fix align_listitems a11y_fixes'
-        'snLink powerpaste'
+        'snLink powerpaste listitem_fix'
     ];
     var config = tinyMCE.extend(default_config, (config || {}), {
         browser_spellcheck: true,
@@ -183,8 +183,6 @@ function mceInit(id, config) {
         content_css: [],
         content_style: "ul li, ol li {margin-bottom: 5px;} img {width:110px; height:110px; border: 1px dashed #000; padding:10px;} .readthis {border: 1px dashed orange; padding: 5px;} #tinymce {padding: 10px;}",
         menubar: false,
-        //paste_as_text: true,
-        //autoresize_bottom_margin: 100,
         plugins: default_plugins,
         external_plugins: {
             readonlymode: snDir('readonlymode'),
