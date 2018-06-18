@@ -64,11 +64,11 @@ function mceInit(id, config) {
         //  'directionality emoticons fullscreen ',
         'fullscreen ',
         //  'hr insertdatetime layer lists importcss nonbreaking',
-        'hr lists',
+        'hr lists table',
         //  'noneditable pagebreak print save searchreplace tabfocus',
         '',
         //  'table template textcolor textpattern visualblocks visualchars powerpaste',
-        'table powerpaste',
+        ' template powerpaste',
         //  'snLink listitem_fix align_listitems a11y_fixes'
         'snLink powerpaste'
     ];
