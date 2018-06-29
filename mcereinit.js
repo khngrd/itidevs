@@ -122,9 +122,8 @@ function mceInit(id, config) {
                     onclick: function () {
                         tinymce.activeEditor.execCommand('mceToggleFormat', false, 'p');
                     }
-                }
-               /*
-               , {
+                    /*
+                }, {
                     icon: false,
                     text: 'Før du går igang',
                     onclick: function () {
