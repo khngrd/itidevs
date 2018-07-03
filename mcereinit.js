@@ -67,15 +67,15 @@ function mceInit(id, config) {
         //  'advlist anchor autolink charmap code colorpicker ',
         'autolink code',
         //  'directionality emoticons fullscreen ',
-        'fullscreen',
+        'fullscreen ',
         //  'hr insertdatetime layer lists importcss nonbreaking',
-        'hr lists table',
+        'hr insertdatetime lists table',
         //  'noneditable pagebreak print save searchreplace tabfocus',
         '',
         //  'table template textcolor textpattern visualblocks visualchars powerpaste',
-        ' template powerpaste',
+        ' template visualblocks visualchars powerpaste',
         //  'snLink listitem_fix align_listitems a11y_fixes'
-        'snLink powerpaste listitem_fix'
+        'snLink powerpaste listitem_fix align_listitems a11y_fixes'
     ];
     var config = tinyMCE.extend(default_config, (config || {}), {
         browser_spellcheck: true,
@@ -178,12 +178,12 @@ function mceInit(id, config) {
         },
         mode: "exact",
         //selector: 'textarea',
-        elements: 'kb_knowledge.text',
-        height: 600,
-        auto_focus: 'kb_knowledge.text',
-        toolbar: 'undo redo | insert | styleselect | bold italic | bullist numlist | table | link image media video | fullscreen | code | aak-btn',
+        elements: 'kb_knowledge.text, kb_knowledge.u_comments',
+        height: 300,
+        //auto_focus: 'kb_knowledge.text',
+        toolbar: 'undo redo | insert | styleselect | bold italic | bullist numlist | table | link image media | fullscreen | code | aak-btn',
         content_css: [],
-        content_style: "ul li, ol li {margin-bottom: 5px;} img {width:30px; height:30px; border: 1px dashed #000; padding:10px;} #tinymce {padding: 10px;}",
+        content_style: "ul li, ol li {margin-bottom: 5px;} img {width:25px; height:25px; border: 1px dashed #000; padding:10px; display: inline-block;} .readthis {border: 1px dashed orange; padding: 5px;} #tinymce {padding: 10px;}",
         menubar: false,
         plugins: default_plugins,
         external_plugins: {
