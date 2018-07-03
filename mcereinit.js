@@ -112,13 +112,13 @@ function mceInit(id, config) {
                 icon: false,
                 menu: [{
                     icon: false,
-                    text: 'Overskrift',
+                    text: 'Formatér som overskrift',
                     onclick: function () {
                         tinymce.activeEditor.execCommand('mceToggleFormat', false, 'h1');
                     }
                 }, {
                     icon: false,
-                    text: 'Tekst',
+                    text: 'Formatér som tekst',
                     onclick: function () {
                         tinymce.activeEditor.execCommand('mceToggleFormat', false, 'p');
                     }
@@ -133,11 +133,20 @@ function mceInit(id, config) {
                     }
                 }, {
                     icon: false,
-                    text: 'Fremhæv tekst',
+                    text: '[!] fremhæv [/!]',
                     onclick: function () {
                         var ed = tinyMCE.activeEditor;
                         var content = ed.selection.getContent({'format':'html'});
                         var new_selection_content = '[!]' + content + '[/!]';
+                        ed.execCommand('insertHTML', false, new_selection_content);
+                    }
+                }, {
+                    icon: false,
+                    text: '{ tag }',
+                    onclick: function () {
+                        var ed = tinyMCE.activeEditor;
+                        var content = ed.selection.getContent({'format':'html'});
+                        var new_selection_content = '{' + content + '}';
                         ed.execCommand('insertHTML', false, new_selection_content);
                     }
                 }],
