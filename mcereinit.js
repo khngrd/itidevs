@@ -183,7 +183,7 @@ function mceInit(id, config) {
         auto_focus: 'kb_knowledge.text',
         toolbar: 'undo redo | insert | styleselect | bold italic | bullist numlist | table | link image media video | fullscreen | code | aak-btn',
         content_css: [],
-        content_style: "ul li, ol li {margin-bottom: 5px;} img {width:110px; height:110px; border: 1px dashed #000; padding:10px;} .readthis {border: 1px dashed orange; padding: 5px;} #tinymce {padding: 10px;}",
+        content_style: "ul li, ol li {margin-bottom: 5px;} img {width:30px; height:30px; border: 1px dashed #000; padding:10px;} #tinymce {padding: 10px;}",
         menubar: false,
         plugins: default_plugins,
         external_plugins: {
