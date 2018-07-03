@@ -67,7 +67,7 @@ function mceInit(id, config) {
         //  'advlist anchor autolink charmap code colorpicker ',
         'autolink code',
         //  'directionality emoticons fullscreen ',
-        'fullscreen ',
+        'fullscreen media',
         //  'hr insertdatetime layer lists importcss nonbreaking',
         'hr lists table',
         //  'noneditable pagebreak print save searchreplace tabfocus',
