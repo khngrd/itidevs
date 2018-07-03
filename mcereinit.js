@@ -128,18 +128,18 @@ function mceInit(id, config) {
                     onclick: function () {
                         var ed = tinyMCE.activeEditor;
                         var content = ed.selection.getContent({'format':'html'});
-                        var new_selection_content = '<div class="notes">' + content + '</div>';
+                        var new_selection_content = '[note]' + content + '[/note]';
                         ed.execCommand('insertHTML', false, new_selection_content);
                     }
-                    /*
                 }, {
                     icon: false,
-                    text: '_dev_stripTags',
+                    text: 'Fremhæv tekst',
                     onclick: function () {
-                        var el = tinymce.activeEditor.selection.getContent({ format : 'text' });
-                        tinymce.activeEditor.selection.setContent(el);
+                        var ed = tinyMCE.activeEditor;
+                        var content = ed.selection.getContent({'format':'html'});
+                        var new_selection_content = '[!]' + content + '[/!]';
+                        ed.execCommand('insertHTML', false, new_selection_content);
                     }
-                    */
                 }],
             });
             ed.on('init', function (e) {
