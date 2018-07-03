@@ -122,16 +122,16 @@ function mceInit(id, config) {
                     onclick: function () {
                         tinymce.activeEditor.execCommand('mceToggleFormat', false, 'p');
                     }
-                    /*
                 }, {
                     icon: false,
-                    text: 'Før du går igang',
+                    text: '[note]',
                     onclick: function () {
                         var ed = tinyMCE.activeEditor;
                         var content = ed.selection.getContent({'format':'html'});
-                        var new_selection_content = '<div id="intro">' + content + '</div>';
+                        var new_selection_content = '<div class="notes">' + content + '</div>';
                         ed.execCommand('insertHTML', false, new_selection_content);
                     }
+                    /*
                 }, {
                     icon: false,
                     text: '_dev_stripTags',
