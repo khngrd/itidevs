@@ -128,7 +128,7 @@ function mceInit(id, config) {
                     onclick: function () {
                         var ed = tinyMCE.activeEditor;
                         var content = ed.selection.getContent({'format':'html'});
-                        var new_selection_content = '[note]' + content + '[/note]';
+                        var new_selection_content = '[note] ' + content + ' [/note]';
                         ed.execCommand('insertHTML', false, new_selection_content);
                     }
                 }, {
