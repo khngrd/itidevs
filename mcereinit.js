@@ -137,7 +137,7 @@ function mceInit(id, config) {
                     onclick: function () {
                         var ed = tinyMCE.activeEditor;
                         var content = ed.selection.getContent({'format':'html'});
-                        var new_selection_content = '[!]' + content + '[/!]';
+                        var new_selection_content = '[!]'+content+'[/!]';
                         ed.execCommand('insertHTML', false, new_selection_content);
                     }
                 }, {
@@ -146,9 +146,18 @@ function mceInit(id, config) {
                     onclick: function () {
                         var ed = tinyMCE.activeEditor;
                         var content = ed.selection.getContent({'format':'html'});
-                        var new_selection_content = '{' + content + '}';
+                        var new_selection_content = '{'+content+'}';
                         ed.execCommand('insertHTML', false, new_selection_content);
                     }
+                }, {
+                    text: 'Tastatur-ikorner',
+                    menu: [{
+                      text: 'Windows-knap',
+                      onclick: function() {
+                        var ed = tinyMCE.activeEditor;
+                        ed.insertContent('{win}');
+                      }
+                    }]
                 }],
             });
             ed.on('init', function (e) {
