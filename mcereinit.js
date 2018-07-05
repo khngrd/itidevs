@@ -109,22 +109,23 @@ function mceInit(id, config) {
             ed.addButton('aak-btn', {
                 type: 'menubutton',
                 text: 'Knowledge',
-                icon: false,
                 menu: [{
-                    icon: false,
-                    text: 'Formatér som overskrift',
-                    onclick: function () {
-                        tinymce.activeEditor.execCommand('mceToggleFormat', false, 'h1');
-                    }
+                    text: 'Format',
+                    menu: [{
+                       text: 'Angiv overskrift / nyt afsnit',
+                        onclick: function () {
+                            tinymce.activeEditor.execCommand('mceToggleFormat', false, 'h1');
+                        }
+                    }, {
+                        text: 'Formatér som tekst',
+                        onclick: function () {
+                            tinymce.activeEditor.execCommand('mceToggleFormat', false, 'p');
+                        }
+                    }],
                 }, {
-                    icon: false,
-                    text: 'Formatér som tekst',
-                    onclick: function () {
-                        tinymce.activeEditor.execCommand('mceToggleFormat', false, 'p');
-                    }
-                }, {
-                    icon: false,
-                    text: '[note]',
+                    text: 'Noter',
+                    menu: [{
+                    text: 'Gør markeret tekst til note',
                     onclick: function () {
                         var ed = tinyMCE.activeEditor;
                         var content = ed.selection.getContent({'format':'html'});
@@ -132,38 +133,45 @@ function mceInit(id, config) {
                         ed.execCommand('insertHTML', false, new_selection_content);
                     }
                 }, {
-                    icon: false,
-                    text: '[!] fremhæv [/!]',
-                    onclick: function () {
-                        var ed = tinyMCE.activeEditor;
-                        var content = ed.selection.getContent({'format':'html'});
-                        var new_selection_content = '[!]'+content+'[/!]';
-                        ed.execCommand('insertHTML', false, new_selection_content);
-                    }
-                 }, {
-                    text: 'Indsæt fremhævet tekst',
+                    text: 'Indsæt en note',
                     onclick: function() {
                         var ed = tinyMCE.activeEditor;
                         ed.windowManager.open({
-                        title: 'Indsæt fremhævet tekst',
+                            title: 'Indsæt note',
                         body: [
-                          {type: 'textbox', name: 'label', label: 'label'}
+                          {type: 'textbox', name: 'label', label: 'note'}
                         ],
                         onsubmit: function(e) {
-                          // Insert content when the window form is submitted
-                          ed.insertContent('[!]'+e.data.label+'[/!]');
+                          ed.insertContent('[note] '+e.data.label+' [/note]');
                         }
                       });
                     }
+                }],
                 }, {
-                    icon: false,
-                    text: '{ tag }',
-                    onclick: function () {
-                        var ed = tinyMCE.activeEditor;
-                        var content = ed.selection.getContent({'format':'html'});
-                        var new_selection_content = '{'+content+'}';
-                        ed.execCommand('insertHTML', false, new_selection_content);
-                    }
+                text: 'Fremhævet tekst',
+                    menu: [{
+                        text: 'Fremhæv markeret tekst',
+                        onclick: function () {
+                            var ed = tinyMCE.activeEditor;
+                            var content = ed.selection.getContent({'format':'html'});
+                            var new_selection_content = '[!]'+content+'[/!]';
+                            ed.execCommand('insertHTML', false, new_selection_content);
+                        }
+                    }, {
+                        text: 'Indsæt fremhævet tekst',
+                        onclick: function() {
+                            var ed = tinyMCE.activeEditor;
+                            ed.windowManager.open({
+                                title: 'Indsæt fremhævet tekst',
+                            body: [
+                              {type: 'textbox', name: 'label', label: 'tekst'}
+                            ],
+                            onsubmit: function(e) {
+                              ed.insertContent('[!]'+e.data.label+'[/!]');
+                            }
+                          });
+                        }
+                    }],
                 }, {
                     text: 'Tastatur-ikorner',
                     menu: [{
@@ -196,12 +204,6 @@ function mceInit(id, config) {
                             var ed = tinyMCE.activeEditor;
                             ed.insertContent('{enter}');
                         }
-                       }, {
-                            text: '&#10230;',
-                            onclick: function() {
-                                var ed = tinyMCE.activeEditor;
-                                ed.insertContent(' &#10230; ');
-                            }
                       }, {
                         text: 'Lav din egen knap',
                         onclick: function() {
@@ -217,7 +219,34 @@ function mceInit(id, config) {
                             }
                           });
                         }
-                    }]
+                    }],
+                }, {
+                    text: 'Pile',
+                    menu: [{
+                      text: 'Venstre-pil',
+                      onclick: function() {
+                        var ed = tinyMCE.activeEditor;
+                        ed.insertContent('&#10229;');
+                      }
+                    }, {
+                        text: 'Højre-pil',
+                        onclick: function() {
+                            var ed = tinyMCE.activeEditor;
+                            ed.insertContent('&#10230;');
+                        }
+                     }, {
+                        text: 'Op-pil',
+                        onclick: function() {
+                            var ed = tinyMCE.activeEditor;
+                            ed.insertContent('&#129025;');
+                        }
+                      }, {
+                        text: 'Ned-pil',
+                        onclick: function() {
+                            var ed = tinyMCE.activeEditor;
+                            ed.insertContent('&#129043;');
+                        }
+                    }],
                 }],
             });
             ed.on('init', function (e) {
