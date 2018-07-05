@@ -188,11 +188,11 @@ function mceInit(id, config) {
                             ed.windowManager.open({
                             title: 'Indsæt knap',
                             body: [
-                              {type: 'textbox', name: 'title', label: 'Title'}
+                              {type: 'textbox', name: 'label', label: 'label'}
                             ],
                             onsubmit: function(e) {
                               // Insert content when the window form is submitted
-                              ed.insertContent('{'+'Title: ' + e.data.title + '}');
+                              ed.insertContent('{'+e.data.label+'}');
                             }
                           });
                         }
