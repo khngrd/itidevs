@@ -140,6 +140,21 @@ function mceInit(id, config) {
                         var new_selection_content = '[!]'+content+'[/!]';
                         ed.execCommand('insertHTML', false, new_selection_content);
                     }
+                 }, {
+                    text: 'Indsæt fremhævet tekst',
+                    onclick: function() {
+                        var ed = tinyMCE.activeEditor;
+                        ed.windowManager.open({
+                        title: 'Indsæt fremhævet tekst',
+                        body: [
+                          {type: 'textbox', name: 'label', label: 'label'}
+                        ],
+                        onsubmit: function(e) {
+                          // Insert content when the window form is submitted
+                          ed.insertContent('[!]'+e.data.label+'[/!]');
+                        }
+                      });
+                    }
                 }, {
                     icon: false,
                     text: '{ tag }',
@@ -186,7 +201,7 @@ function mceInit(id, config) {
                         onclick: function() {
                             var ed = tinyMCE.activeEditor;
                             ed.windowManager.open({
-                            title: 'Indsæt knap',
+                            title: 'Label',
                             body: [
                               {type: 'textbox', name: 'label', label: 'label'}
                             ],
