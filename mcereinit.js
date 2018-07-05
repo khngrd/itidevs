@@ -197,7 +197,7 @@ function mceInit(id, config) {
                             ed.insertContent('{enter}');
                         }
                        }, {
-                            text: 'Højre pil',
+                            text: '&#10230;',
                             onclick: function() {
                                 var ed = tinyMCE.activeEditor;
                                 ed.insertContent(' &#10230; ');
