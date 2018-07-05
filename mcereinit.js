@@ -157,6 +157,31 @@ function mceInit(id, config) {
                       });
                     }
                 }],
+             }, {
+                text: 'Tip',
+                menu: [{
+                text: 'Gør markeret tekst til et tip',
+                onclick: function () {
+                    var ed = tinyMCE.activeEditor;
+                    var content = ed.selection.getContent({'format':'html'});
+                    var new_selection_content = '[?]' + content + '[/?]';
+                    ed.execCommand('insertHTML', false, new_selection_content);
+                }
+                }, {
+                text: 'Indsæt et tip',
+                onclick: function() {
+                    var ed = tinyMCE.activeEditor;
+                    ed.windowManager.open({
+                        title: 'Indsæt tip',
+                    body: [
+                      {type: 'textbox', name: 'label', label: 'tip'}
+                    ],
+                    onsubmit: function(e) {
+                      ed.insertContent('[?] '+e.data.label+' [/?]');
+                    }
+              });
+            }
+        }],
                 }, {
                 text: 'Fremhævet tekst',
                     menu: [{
