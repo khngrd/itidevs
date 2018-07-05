@@ -192,7 +192,7 @@ function mceInit(id, config) {
                             ],
                             onsubmit: function(e) {
                               // Insert content when the window form is submitted
-                              ed.insertContent('Title: ' + e.data.title);
+                              ed.insertContent('{'+'Title: ' + e.data.title + '}');
                             }
                           });
                         }
