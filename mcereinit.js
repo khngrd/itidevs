@@ -121,6 +121,14 @@ function mceInit(id, config) {
                         onclick: function () {
                             tinymce.activeEditor.execCommand('mceToggleFormat', false, 'p');
                         }
+                    }, {
+                        text: 'Angiv liste-element',
+                        onclick: function () {
+                            var ed = tinyMCE.activeEditor;
+                            var content = ed.selection.getContent({'format':'html'});
+                            var new_selection_content = '[@] ' + content + ' [/@]';
+                            ed.execCommand('insertHTML', false, new_selection_content);
+                        }
                     }],
                 }, {
                     text: 'Noter',
