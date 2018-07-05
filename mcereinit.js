@@ -157,6 +157,12 @@ function mceInit(id, config) {
                         var ed = tinyMCE.activeEditor;
                         ed.insertContent('{win}');
                       }
+                    }, {
+                        text: 'Shift-knap',
+                        onclick: function() {
+                            var ed = tinyMCE.activeEditor;
+                            ed.insertContent('{shift}');
+                        }
                     }]
                 }],
             });
