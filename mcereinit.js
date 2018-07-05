@@ -257,7 +257,7 @@ function mceInit(id, config) {
         mode: "exact",
         //selector: 'textarea',
         elements: 'kb_knowledge.text, kb_knowledge.u_comments',
-        height: 300,
+        //height: 300,
         //auto_focus: 'kb_knowledge.text',
         toolbar: 'undo redo | insert | styleselect | bold italic | bullist numlist | table | link image media | fullscreen | code | aak-btn',
         content_css: [],
