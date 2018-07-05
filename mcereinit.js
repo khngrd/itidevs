@@ -163,6 +163,39 @@ function mceInit(id, config) {
                             var ed = tinyMCE.activeEditor;
                             ed.insertContent('{shift}');
                         }
+                     }, {
+                        text: 'Ctrl-knap',
+                        onclick: function() {
+                            var ed = tinyMCE.activeEditor;
+                            ed.insertContent('{ctrl}');
+                        }
+                      }, {
+                        text: 'tab-knap',
+                        onclick: function() {
+                            var ed = tinyMCE.activeEditor;
+                            ed.insertContent('{tab}');
+                        }
+                      }, {
+                        text: 'Enter-knap',
+                        onclick: function() {
+                            var ed = tinyMCE.activeEditor;
+                            ed.insertContent('{enter}');
+                        }
+                      }, {
+                        text: 'Lav din egen knap',
+                        onclick: function() {
+                            var ed = tinyMCE.activeEditor;
+                            ed.windowManager.open({
+                            title: 'Example plugin',
+                            body: [
+                              {type: 'textbox', name: 'title', label: 'Title'}
+                            ],
+                            onsubmit: function(e) {
+                              // Insert content when the window form is submitted
+                              editor.insertContent('Title: ' + e.data.title);
+                            }
+                          });
+                        }
                     }]
                 }],
             });
