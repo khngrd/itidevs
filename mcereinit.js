@@ -196,6 +196,12 @@ function mceInit(id, config) {
                             var ed = tinyMCE.activeEditor;
                             ed.insertContent('{enter}');
                         }
+                       }, {
+                            text: 'Højre pil',
+                            onclick: function() {
+                                var ed = tinyMCE.activeEditor;
+                                ed.insertContent(&#8658;);
+                            }
                       }, {
                         text: 'Lav din egen knap',
                         onclick: function() {
