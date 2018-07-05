@@ -200,7 +200,7 @@ function mceInit(id, config) {
                             text: 'Højre pil',
                             onclick: function() {
                                 var ed = tinyMCE.activeEditor;
-                                ed.insertContent(' &#8658; ');
+                                ed.insertContent(' &#10230; ');
                             }
                       }, {
                         text: 'Lav din egen knap',
