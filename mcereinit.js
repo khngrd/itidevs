@@ -186,13 +186,13 @@ function mceInit(id, config) {
                         onclick: function() {
                             var ed = tinyMCE.activeEditor;
                             ed.windowManager.open({
-                            title: 'Example plugin',
+                            title: 'Indsæt knap',
                             body: [
                               {type: 'textbox', name: 'title', label: 'Title'}
                             ],
                             onsubmit: function(e) {
                               // Insert content when the window form is submitted
-                              editor.insertContent('Title: ' + e.data.title);
+                              ed.insertContent('Title: ' + e.data.title);
                             }
                           });
                         }
