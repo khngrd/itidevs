@@ -36,6 +36,8 @@ function mceInit(id, config) {
         convert_fonts_to_spans: true,
         fix_list_elements: true,
         powerpaste_html_import: 'clean',
+        powerpaste_word_import: 'clean',
+        paste_as_text: true,
         remove_trailing_brs: true,
         dialog_type: 'modal',
         inline_styles: false,
