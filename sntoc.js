@@ -12,7 +12,7 @@ jQuery.tableOfContents =
         var anchor = "<a name='" + index + "'></a>";                                   
         jQuery(this).before(anchor);                                                        
 
-        var li     = "<li style='font-family:\"SourceSansPro\", Helvetica, Arial, sans-serif; list-style-type:none; padding-left: 10px; list-style-position: outside; font-size:14px;'><a href='#" + index + "'>" + 
+        var li     = "<li style='font-family:\"SourceSansPro\", Helvetica, Arial, sans-serif; list-style-type:none; list-style-position: outside; font-size:14px;'><a href='#" + index + "'>" + 
                 jQuery(this).text() + "</a></li>";   
 
         if( jQuery(this).is(header) ){                                                        
@@ -28,7 +28,8 @@ jQuery.tableOfContents =
 } 
 
 $('.kb-container-column.col-md-3').append(''+
-    '<div id="toc" class="panel panel-primary b" style="border-radius:0; border:0; box-shadow: none;">'+
+    //'<div id="toc" class="panel panel-primary b" style="border-radius:0; border:0; box-shadow: none;">'+
+    '<div id="toc" class="panel panel-primary b">'+
     '<div class="panel-heading">'+
     '<h1 class="h4 panel-title ng-binding">Index</h1>'+
     '</div><div class="panel-body">'+
