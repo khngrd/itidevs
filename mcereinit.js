@@ -323,7 +323,7 @@ function mceInit(id, config) {
         elements: 'kb_knowledge.text, kb_knowledge.u_comments',
         //height: 300,
         //auto_focus: 'kb_knowledge.text',
-        toolbar: 'undo redo | insert | styleselect | bold italic | bullist numlist | table | link image media | fullscreen | code | aak-btn',
+        toolbar: 'undo redo | insert | styleselect | bold italic | bullist numlist | alignleft aligncenter alignright | table | link image media | fullscreen | code | aak-btn',
         content_css: [],
         content_style: "ul li, ol li {margin-bottom: 5px; margin-left: 0px;} ul, ol {padding-left: 0;} img {width:25px; height:10px; border: 1px dashed #000; padding:5px; display: inline-block;} #tinymce {padding: 10px;} pre {background-color: #fafafa; border: none; border-radius: 0;}",
         menubar: false,
