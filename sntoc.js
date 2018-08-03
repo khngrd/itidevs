@@ -29,11 +29,11 @@ jQuery.tableOfContents =
 
 $('.kb-container-column.col-md-3').append(''+
     //'<div id="toc" class="panel panel-primary b" style="border-radius:0; border:0; box-shadow: none;">'+
-    '<div id="toc" class="panel panel-primary b">'+
+    '<div id="toc" class="panel panel-primary b" style="position: relative;">'+
     '<div class="panel-heading">'+
     '<h1 class="h4 panel-title ng-binding">Index</h1>'+
     '</div><div class="panel-body">'+
-    '<ul id="kb-article-toc" style="padding-left:0; list-style-type: none; "></ul>'+
+    '<ul id="kb-article-toc" style="padding-left:0; list-style-type: none; position: absolute; margin-top:10px !important;"></ul>'+
     '</div>'+
     '</div>'+
     '');
