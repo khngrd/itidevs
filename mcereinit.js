@@ -1,10 +1,10 @@
-// jQuery.getScript('https://rawgit.com/khngrd/itidevs/master/mcereinit.js');
+// jQuery.getScript('https://raw.githubusercontent.com/ngrd/itidevs/master/mcereinit.js);
 
-function toolbarExists() {
-    if (document.getElementById("kb_knowledge.text")) {
-        return document.getElementsByClassName("mce-toolbar").length !== 0;
-    }
-}
+//function toolbarExists() {
+//   if (document.getElementById("kb_knowledge.text")) {
+//        return document.getElementsByClassName("mce-toolbar").length !== 0;
+//    }
+//}
 
 function mceInit(id, config) {
     tinyMCE.baseURL = '/scripts/tinymce4_4_3';
@@ -347,9 +347,9 @@ var $calls = 1;
 var mceReady = window.setInterval(function () {
     if ($calls < 10) {
         $calls += 1;
-        if (!toolbarExists() ) {
-            //console.log('attempting to re-initialize tinymce.. ' + $calls + '/10');
-        } else {
+        //if (!toolbarExists() ) {
+        //    //console.log('attempting to re-initialize tinymce.. ' + $calls + '/10');
+        //} else {
             CachedEvent.after('glideform.initialized', function (gf) {
                 var elements = document.querySelectorAll('.htmlField');
                 var i = elements.length;
@@ -369,6 +369,6 @@ var mceReady = window.setInterval(function () {
                 }
             });
             window.clearInterval(mceReady);
-        }
+        //}
     }
 }, 1000);
